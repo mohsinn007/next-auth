@@ -3,8 +3,18 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import { useSession } from 'next-auth/react'
+import { authOptions } from './api/auth/[...nextauth]'
+import { unstable_getServerSession } from 'next-auth'
 
 const inter = Inter({ subsets: ['latin'] })
+
+export async function getServerSideProps({ req, res}) {
+    return{
+      props:{
+        session: await unstable_getServerSession(req, res,authOptions)
+      }
+    }
+  }
 
 export default function Home() {
   const session = useSession()

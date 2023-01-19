@@ -6,7 +6,7 @@ import { SessionProvider } from 'next-auth/react';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-      <SessionProvider session={pageProps.session} basePath='/custom-route/api/auth'>
+      <SessionProvider session={pageProps.session}>
         <Navbar />
         <Component {...pageProps} />
       </SessionProvider>
