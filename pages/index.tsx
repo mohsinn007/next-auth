@@ -22,7 +22,7 @@ export default function Home() {
           <p>
             {session?.data?.user?.name}
             <br />
-            Get started by editing&nbsp;
+            Get started by Vercel&nbsp;
             <code className={styles.code}>pages/index.tsx</code>
           </p>
           <div>
